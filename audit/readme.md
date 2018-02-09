@@ -98,7 +98,7 @@ List of all issues: [Github](https://github.com/tikonoff/gifto/issues)
 <br>
 
 ## Dynamic Analysis
-[![Coverage Status](https://coveralls.io/repos/github/gabriel-canaan/gifto/badge.svg?branch=gabedojo)](https://coveralls.io/github/gabriel-canaan/gifto?branch=gabedojo)
+[![Coverage Status](https://coveralls.io/repos/github/tikonoff/staking-app/badge.svg?branch=alex)](https://coveralls.io/github/tikonoff/staking-app?branch=alex)
 
 ```
 -------------------------|----------|----------|----------|----------|----------------|
