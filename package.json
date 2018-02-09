@@ -8,6 +8,7 @@
     "start": " BLUEBIRD_DEBUG=1 NODE_ENV=dev node src/server/index.js",
     "dev": "webpack-dev-server --content-base src/server/index.js --port 8888 --inline --hot",
     "test-automation": "node scripts/testStakeAutomation.js",
+    "coverage": "./node_modules/.bin/solidity-coverage --network development && cat coverage/lcov.info | ./node_modules/.bin/coveralls",
     "server": "node src/server/index.js"
   },
   "repository": {
@@ -63,9 +64,10 @@
     "mock-require": "2.0.2",
     "react": "16.0.0",
     "react-addons-test-utils": "15.6.2",
-    "react-dom": "16.0.0",
+    "react-dom": "^16.2.0",
     "react-test-renderer": "16.1.1",
     "solc": "^0.4.19",
+    "solidity-coverage": "^0.4.9",
     "truffle": "4.0.1",
     "truffle-hdwallet-provider": "0.0.3",
     "webpack": "3.8.1",
