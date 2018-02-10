@@ -95,6 +95,9 @@ contract Stake is Owned, Validating {
     return "1.0.0";
   }
 
+    function test() external onlyOperator returns (string) {
+        return "passed";
+    }
   /// @notice To set the the address of the LEV token
   /// @param _levToken The token address
   function setLevToken(address _levToken) external validAddress(_levToken) onlyOwner {

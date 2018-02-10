@@ -1,6 +1,6 @@
 const Fee = artifacts.require('./Fee.sol');
 const expect = require('expect.js');
-
+const assertFail = require('./helpers/assertFail');
 
 contract('owner manipulations', (accounts) => {
   let fee;
@@ -106,6 +106,18 @@ contract('only owner', (accounts) => {
       expect(e.message).to.eql('VM Exception while processing transaction: revert')
     }
   })
+});
+
+contract('Set operator', (accounts) => {
+    it('owner can set operator', async function () {
+        let fee = await Fee.new(owners(accounts), 'FEE', 9, 'FEE');
+        assert.isOk(await fee.setOperator(accounts[2], {from: accounts[0]}));
+    });
+
+    it('only owner can set operator', async function () {
+        let fee = await Fee.new(owners(accounts), 'FEE', 9, 'FEE');
+        await assertFail(await fee.setOperator(accounts[2], {from: accounts[2]}));
+    })
 });
 
 
