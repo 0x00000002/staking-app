@@ -11,6 +11,10 @@ contract SafeMathMock {
         result = SafeMath.mul(a, b);
     }
 
+    function divide(uint256 a, uint256 b) public {
+        result = SafeMath.div(a, b);
+    }
+
     function subtract(uint256 a, uint256 b) public {
         result = SafeMath.sub(a, b);
     }
