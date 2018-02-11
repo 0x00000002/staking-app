@@ -1,7 +1,7 @@
 const assertJump = require('../helpers/assertJump');
 const SafeMathMock = artifacts.require('SafeMathMock.sol');
 
-contract('SafeMath', function (accounts) {
+contract('SafeMath <Blockchain Labs>, @tikonoff', function (accounts) {
     let safeMath;
 
     before(async function () {
@@ -21,7 +21,7 @@ contract('SafeMath', function (accounts) {
         let b = 1234;
         await safeMath.divide(a, b);
         let result = await safeMath.result();
-        assert.equal(result.toNumber(), Math.floor(a / b));
+        assert.equal(await result.toNumber(), Math.floor(a / b));
     });
 
     it('adds correctly', async function () {

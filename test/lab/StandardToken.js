@@ -2,7 +2,7 @@ const assertFail = require('../helpers/assertFail');
 // import assertFail from '../helpers/assertFail';
 const StandardTokenMock = artifacts.require('StandardTokenMock');
 
-contract('StandardToken', function ([_, owner, recipient, anotherAccount]) {
+contract('StandardToken, <Blockchain Labs>, @tikonoff', function ([_, owner, recipient, anotherAccount]) {
     const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 
     beforeEach(async function () {
