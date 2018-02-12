@@ -20,6 +20,11 @@ contract('Token <Blockchain Labs>, @tikonoff', ([owner, user1, user2]) => {
             value = await token.allowance(owner, user);
             assert.equal(value, amount);
         });
+
+        // it.only('should return false if require fail', async function () {
+        //     assert.isOk(value = await token.approveAndCall.call(0x45C35a63e00e99bde9c48A534F1fFc7860077A76, -1000, "asdfa"));
+        //     assert.equal(value, false);
+        // });
     });
 });
 

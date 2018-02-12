@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">38.46% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/13</span>
+        <span class='fraction'>13/13</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/5</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">35.71% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/14</span>
+        <span class='fraction'>14/14</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -144,8 +144,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,10 +159,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7×</span>
-<span class="cline-any cline-yes">7×</span>
-<span class="cline-any cline-yes">7×</span>
-<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -170,15 +176,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -186,9 +186,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.4.18;
@@ -217,8 +217,8 @@ contract Fee is Owned, Validating, StandardToken {
   string public version = 'F0.1';       //human 0.1 standard. Just an arbitrary versioning scheme.
   address public minter;
 &nbsp;
-<span class="fstat-no" title="function not covered" >  modifier onlyMinter </span>{
-<span class="cstat-no" title="statement not covered" >    require(msg.sender == minter)</span>;
+  modifier onlyMinter {
+    require(msg.sender == minter);
     _;
   }
 &nbsp;
@@ -247,22 +247,22 @@ contract Fee is Owned, Validating, StandardToken {
 &nbsp;
   /// @notice To eliminate tokens and adjust the price of the FEE tokens
   /// @param _value Amount of tokens to delete
-<span class="fstat-no" title="function not covered" >  function burnTokens(uint _value) public notZero(_value) </span>{
-<span class="cstat-no" title="statement not covered" >    require(balances[msg.sender] &gt;= _value)</span>;
+  function burnTokens(uint _value) public notZero(_value) {
+    require(balances[msg.sender] &gt;= _value);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    balances[msg.sender] = SafeMath.sub(balances[msg.sender], _value)</span>;
-<span class="cstat-no" title="statement not covered" >    feeInCirculation = SafeMath.sub(feeInCirculation, _value)</span>;
-<span class="cstat-no" title="statement not covered" >    Burn(msg.sender, _value)</span>;
+    balances[msg.sender] = SafeMath.sub(balances[msg.sender], _value);
+    feeInCirculation = SafeMath.sub(feeInCirculation, _value);
+    Burn(msg.sender, _value);
   }
 &nbsp;
   /// @notice To send tokens to another user. New FEE tokens are generated when
   /// doing this process by the minter
   /// @param _to The receiver of the tokens
   /// @param _value The amount o
-<span class="fstat-no" title="function not covered" >  function sendTokens(address _to, uint _value) public onlyMinter validAddress(_to) notZero(_value) </span>{
-<span class="cstat-no" title="statement not covered" >    balances[_to] = SafeMath.add(balances[_to], _value)</span>;
-<span class="cstat-no" title="statement not covered" >    feeInCirculation = SafeMath.add(feeInCirculation, _value)</span>;
-<span class="cstat-no" title="statement not covered" >    Transfer(msg.sender, _to, _value)</span>;
+  function sendTokens(address _to, uint _value) public onlyMinter validAddress(_to) notZero(_value) {
+    balances[_to] = SafeMath.add(balances[_to], _value);
+    feeInCirculation = SafeMath.add(feeInCirculation, _value);
+    Transfer(msg.sender, _to, _value);
   }
 }
 &nbsp;</pre></td></tr>
@@ -271,7 +271,7 @@ contract Fee is Owned, Validating, StandardToken {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 11 2018 20:09:05 GMT+1300 (NZDT)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Feb 12 2018 17:00:17 GMT+1300 (NZDT)
 </div>
 </div>
 <script src="../prettify.js"></script>

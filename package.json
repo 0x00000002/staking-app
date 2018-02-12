@@ -8,7 +8,7 @@
     "start": " BLUEBIRD_DEBUG=1 NODE_ENV=dev node src/server/index.js",
     "dev": "webpack-dev-server --content-base src/server/index.js --port 8888 --inline --hot",
     "test-automation": "node scripts/testStakeAutomation.js",
-    "coverage": "./node_modules/.bin/solidity-coverage --network development && cat coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "coverage": "./node_modules/.bin/solidity-coverage --network development",
     "server": "node src/server/index.js"
   },
   "repository": {

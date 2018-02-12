@@ -95,7 +95,7 @@ contract Stake is Owned, Validating {
     return "1.0.0";
   }
 
-    function test() external onlyOperator returns (string) {
+    function test() external view onlyOperator returns (string) {
         return "passed";
     }
   /// @notice To set the the address of the LEV token
