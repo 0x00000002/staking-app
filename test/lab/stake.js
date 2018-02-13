@@ -78,6 +78,24 @@ contract('Stake Levs <Blockchain Labs>, @tikonoff', ([owner, operator, beneficia
         let res = await stake.feeToken.call();
         assert.equal(token.address, res.toString());
     });
+
+    it('Staker might be able to redeem his LEVs', async () => {
+        try {
+            await await stake.redeemLevAndFeeByStaker({from: owner});
+            assert.fail('should have thrown before');
+        } catch(error) {
+            assertRevert(error);
+        }
+    });
+
+    it('Operator can instigate redeeming for all stakers', async () => {
+        try {
+            await stake.redeemLevAndFeeToStakers([user1, user2], {from: operator})
+            assert.fail('should have thrown before');
+        } catch(error) {
+            assertRevert(error);
+        }
+    });
 });
 
 
