@@ -95,10 +95,12 @@ contract Stake is Owned, Validating {
     return "1.0.0";
   }
 
-    function test() external view onlyOperator returns (string) {
+    function checkOperator() external view onlyOperator isStaking isDoneStaking returns (string) {
         return "passed";
     }
-  /// @notice To set the the address of the LEV token
+
+
+    /// @notice To set the the address of the LEV token
   /// @param _levToken The token address
   function setLevToken(address _levToken) external validAddress(_levToken) onlyOwner {
     levToken = Token(_levToken);
