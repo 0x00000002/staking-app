@@ -79,6 +79,11 @@ contract('Stake Levs <Blockchain Labs>, @tikonoff', ([owner, operator, beneficia
         assert.equal(token.address, res.toString());
     });
 
+    it('Operator can revert FEE_CALCULATED flag', async () => {
+        await stake.revertFeeCalculatedFlag(false, {from: owner});
+        assert.equal((await stake.feeCalculated.call()), false);
+    });
+
     it('Staker might be able to redeem his LEVs', async () => {
         try {
             await await stake.redeemLevAndFeeByStaker({from: owner});
@@ -88,9 +93,23 @@ contract('Stake Levs <Blockchain Labs>, @tikonoff', ([owner, operator, beneficia
         }
     });
 
-    it('Operator can instigate redeeming for all stakers', async () => {
+    it('Operator can run FEE calculation', async () => {
         try {
-            await stake.redeemLevAndFeeToStakers([user1, user2], {from: operator})
+            await stake.updateFeeForCurrentStakingInterval({from: operator});
+            assert.fail('should have thrown before');
+        } catch(error) {
+            assertRevert(error);
+        }
+
+    });
+
+    it('Operator can instigate redeeming for all stakers', async () => {
+        await stake.revertFeeCalculatedFlag(true, {from: owner});
+        await stake.revertFeeCalculatedFlag(true, {from: user1});
+        await stake.revertFeeCalculatedFlag(true, {from: user2});
+        try {
+            await stake.redeemLevAndFeeToStakers([user1, user2], {from: operator});
+            await stake.redeemLevAndFeeToStakers([user1, user2], {from: user2});
             assert.fail('should have thrown before');
         } catch(error) {
             assertRevert(error);

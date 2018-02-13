@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">59.57% </span>
+        <span class="strong">70.21% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>28/47</span>
+        <span class='fraction'>33/47</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">15.38% </span>
+        <span class="strong">23.08% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>4/26</span>
+        <span class='fraction'>6/26</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">81.25% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>12/16</span>
+        <span class='fraction'>13/16</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">54% </span>
+        <span class="strong">66% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>27/50</span>
+        <span class='fraction'>33/50</span>
       </div>
     </div>
   </div>
@@ -379,32 +379,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -578,19 +578,19 @@ contract Stake is Owned, Validating {
     StakeEvent(msg.sender, _quantity, startBlock, endBlock);
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function revertFeeCalculatedFlag(bool _flag) external onlyOwner isDoneStaking </span>{
-<span class="cstat-no" title="statement not covered" >    feeCalculated = _flag</span>;
+  function revertFeeCalculatedFlag(bool _flag) external onlyOwner isDoneStaking {
+    feeCalculated = _flag;
   }
 &nbsp;
   /// @notice To update the price of FEE tokens to the current value.
   /// Executable by the operator only
-<span class="fstat-no" title="function not covered" >  function updateFeeForCurrentStakingInterval() external onlyOperator isDoneStaking </span>{
-<span class="cstat-no" title="statement not covered" >    require(feeCalculated == false)</span>;
-<span class="cstat-no" title="statement not covered" >    uint feeReceived = feeToken.balanceOf(this)</span>;
-<span class="cstat-no" title="statement not covered" >    feeForTheStakingInterval = feeForTheStakingInterval.add(feeReceived.add(this.balance.div(weiPerFee)))</span>;
-<span class="cstat-no" title="statement not covered" >    feeCalculated = true</span>;
-<span class="cstat-no" title="statement not covered" >    FeeCalculated(feeForTheStakingInterval, feeReceived, this.balance, startBlock, endBlock)</span>;
-<span class="cstat-no" title="statement not covered" >    if (feeReceived &gt; 0) feeToken.burnTokens(feeReceived);</span>
+  function updateFeeForCurrentStakingInterval() external onlyOperator isDoneStaking {
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(feeCalculated == false);
+    uint feeReceived = feeToken.balanceOf(this);
+    feeForTheStakingInterval = feeForTheStakingInterval.add(feeReceived.add(this.balance.div(weiPerFee)));
+    feeCalculated = true;
+    FeeCalculated(feeForTheStakingInterval, feeReceived, this.balance, startBlock, endBlock);
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (feeReceived &gt; 0) feeToken.burnTokens(feeReceived);
 <span class="cstat-no" title="statement not covered" >    if (this.balance &gt; 0) wallet.transfer(this.balance);</span>
   }
 &nbsp;
@@ -599,8 +599,8 @@ contract Stake is Owned, Validating {
     redeemLevAndFee(msg.sender);
   }
 &nbsp;
-  function redeemLevAndFeeToStakers(address[] _stakers) external onlyOperator {
-    for (uint i = 0; i &lt; _stakers.length; i++) redeemLevAndFee(_stakers[i]);
+<span class="fstat-no" title="function not covered" >  function redeemLevAndFeeToStakers(address[] _stakers) external onlyOperator </span>{
+<span class="cstat-no" title="statement not covered" >    for (uint i = 0; i &lt; _stakers.length; i++) <span class="cstat-no" title="statement not covered" >redeemLevAndFee(_stakers[i])</span>;</span>
   }
 &nbsp;
   function redeemLevAndFee(address _staker) private validAddress(_staker) isDoneStaking {
@@ -649,7 +649,7 @@ contract Stake is Owned, Validating {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Feb 13 2018 17:36:27 GMT+1300 (NZDT)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Feb 13 2018 19:27:15 GMT+1300 (NZDT)
 </div>
 </div>
 <script src="../prettify.js"></script>
