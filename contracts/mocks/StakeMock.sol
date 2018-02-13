@@ -4,7 +4,7 @@ import "../Stake.sol";
 
 contract StakeMock is Stake {
 
-    function StakeMock(
+    function public StakeMock(
         address[] _owners,
         address _operator,
         address _wallet,

@@ -1,10 +1,10 @@
 const HumanStandardToken = artifacts.require("./HumanStandardToken.sol");
-const Stake = artifacts.require("Stake");
+const Stake = artifacts.require("StakeMock");
 //const Stake = artifacts.require("StakeMock");
 const Fee = artifacts.require("./Fee.sol");
 const assertFail = require('./../helpers/assertFail');
 const assertRevert = require('./../helpers/assertRevert');
-
+const BigNumber = require("bignumber.js");
 
 contract('Stake Levs <Blockchain Labs>, @tikonoff', ([owner, operator, beneficiary, user1, user2]) => {
     let token, stake;
@@ -61,7 +61,24 @@ contract('Stake Levs <Blockchain Labs>, @tikonoff', ([owner, operator, beneficia
             assertRevert(error);
         }
     });
+
+    it('Fallback functions accept money', async () => {
+        let initialBalance = (await token.balanceOf(stake.address)).toNumber();
+        await token.transfer(stake.address, 25, {from: user1});
+        let afterBalance = (await token.balanceOf(stake.address)).toNumber();
+        assert.equal(afterBalance, initialBalance+25);
+        // let initialBalance = await web3.eth.getBalance(stake.address);
+        assert.isOk(await stake.sendTransaction({from: user1, to: user2, value: 10}));
+        // let afterBalance = await web3.eth.getBalance(stake.address);
+        // assert.equal(initialBalance.toNumber() + 10, afterBalance.toNumber());
+    });
+
 });
+
+
+
+
+
 
 
 // contract('Stake Levs <Blockchain Labs>, @tikonoff', ([owner, operator, beneficiary, user1, user2]) => {

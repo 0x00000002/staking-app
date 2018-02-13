@@ -9,6 +9,7 @@
     "dev": "webpack-dev-server --content-base src/server/index.js --port 8888 --inline --hot",
     "test-automation": "node scripts/testStakeAutomation.js",
     "coverage": "./node_modules/.bin/solidity-coverage --network development",
+    "coveralls": "cat coverage/lcov.info | ./node_modules/.bin/coveralls",
     "server": "node src/server/index.js"
   },
   "repository": {
