@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">20% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>10/10</span>
+        <span class='fraction'>2/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">16.67% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>4/6</span>
+        <span class='fraction'>1/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">20% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>10/10</span>
+        <span class='fraction'>2/10</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -84,27 +84,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5×</span>
 <span class="cline-any cline-yes">5×</span>
-<span class="cline-any cline-yes">5×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15×</span>
-<span class="cline-any cline-yes">14×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15×</span>
-<span class="cline-any cline-yes">15×</span>
-<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.4.11;
@@ -115,28 +115,28 @@
  * @dev Math operations with safety checks that throw on error
  */
 library SafeMath {
-  function mul(uint256 a, uint256 b) internal pure returns (uint256) {
-    uint256 c = a * b;
-    <span class="missing-if-branch" title="else path not taken" >E</span>assert(a == 0 || c / a == b);
-    return c;
+<span class="fstat-no" title="function not covered" >  function mul(uint256 a, uint256 b) internal pure returns (uint256) </span>{
+<span class="cstat-no" title="statement not covered" >    uint256 c = a * b</span>;
+<span class="cstat-no" title="statement not covered" >    assert(a == 0 || c / a == b)</span>;
+<span class="cstat-no" title="statement not covered" >    return c;</span>
   }
 &nbsp;
-  function div(uint256 a, uint256 b) internal pure returns (uint256) {
+<span class="fstat-no" title="function not covered" >  function div(uint256 a, uint256 b) internal pure returns (uint256) </span>{
     // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
-    uint256 c = a / b;
+<span class="cstat-no" title="statement not covered" >    uint256 c = a / b</span>;
     // assert(a == b * c + a % b); // There is no case in which this doesn't hold
-    return c;
+<span class="cstat-no" title="statement not covered" >    return c;</span>
   }
 &nbsp;
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    <span class="missing-if-branch" title="else path not taken" >E</span>assert(b &lt;= a);
     return a - b;
   }
 &nbsp;
-  function add(uint256 a, uint256 b) internal pure returns (uint256) {
-    uint256 c = a + b;
-    <span class="missing-if-branch" title="else path not taken" >E</span>assert(c &gt;= a);
-    return c;
+<span class="fstat-no" title="function not covered" >  function add(uint256 a, uint256 b) internal pure returns (uint256) </span>{
+<span class="cstat-no" title="statement not covered" >    uint256 c = a + b</span>;
+<span class="cstat-no" title="statement not covered" >    assert(c &gt;= a)</span>;
+<span class="cstat-no" title="statement not covered" >    return c;</span>
   }
 }
 &nbsp;</pre></td></tr>
@@ -145,7 +145,7 @@ library SafeMath {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Feb 13 2018 19:27:15 GMT+1300 (NZDT)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Feb 14 2018 09:59:14 GMT+1300 (NZDT)
 </div>
 </div>
 <script src="../prettify.js"></script>
