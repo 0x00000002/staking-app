@@ -73,6 +73,11 @@ contract('Stake Levs <Blockchain Labs>, @tikonoff', ([owner, operator, beneficia
         // assert.equal(initialBalance.toNumber() + 10, afterBalance.toNumber());
     });
 
+    it('Set Fee token', async () => {
+        await stake.setFeeToken(token.address, {from: owner});
+        let res = await stake.feeToken.call();
+        assert.equal(token.address, res.toString());
+    });
 });
 
 
