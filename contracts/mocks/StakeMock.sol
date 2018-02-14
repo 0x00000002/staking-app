@@ -29,6 +29,19 @@ contract StakeMock is Stake {
     function setTotalLevsToZero() {
         totalLevs = 0;
     }
+
+    function setTotalLevsToMany() {
+        totalLevs = 1000000;
+    }
+
+    function setTotalLevBlocksToMany() {
+        totalLevBlocks = 1000000;
+    }
+
+    function setFeeForTheStakingInterval() {
+        feeForTheStakingInterval = 10;
+    }
+
 //
 //    function setStakingNow() public {
 //        super.startNewStakingInterval(block.number - 10, block.number + 10);
