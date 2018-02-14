@@ -192,6 +192,7 @@ contract('<Blockchain Labs> Stake.sol, staking period is over', ([owner, operato
             } catch(error) {
                 assertRevert(error);
             }
+            await stake.setTotalLevBlocksToZero();
         });
     });
 });
