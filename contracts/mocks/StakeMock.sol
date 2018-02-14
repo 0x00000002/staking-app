@@ -21,6 +21,14 @@ contract StakeMock is Stake {
     modifier isDoneStaking {
         _;
     }
+
+    function setTotalLevBlocksToZero() {
+        totalLevBlocks = 0;
+    }
+
+    function setTotalLevsToZero() {
+        totalLevs = 0;
+    }
 //
 //    function setStakingNow() public {
 //        super.startNewStakingInterval(block.number - 10, block.number + 10);

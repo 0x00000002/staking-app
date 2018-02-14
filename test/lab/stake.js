@@ -22,8 +22,7 @@ contract('<Blockchain Labs> Stake.sol, common functions', ([owner, operator, ben
         // await forceMine(new BN(200));
     });
 
-
-    it('user should be able to put tokens for stake', async function () {
+    it.only('user should be able to put tokens for stake', async function () {
         await stake.startNewStakingInterval(100, 300, {from: operator});
         await token.transfer(stake.address, 1000);
         await stake.setLevToken(token.address);
@@ -38,9 +37,15 @@ contract('<Blockchain Labs> Stake.sol, common functions', ([owner, operator, ben
         assert.equal((await stake.stakes(user2)).toNumber(), 20);
         assert.equal((await stake.levBlocks(user1)).toNumber(), 2860);
         assert.equal((await stake.levBlocks(user2)).toNumber(), 5680);
+        try {
+            await stake.stakeTokens(200, {from: user1});
+            assert.fail('should have thrown before');
+        } catch(error) {
+            assertRevert(error);
+        }
     });
 
-    it('Only operator can do some things', async function () {
+    it.only('Only operator can do some things', async function () {
         await stake.checkOperator({from: operator});
         try {
             await stake.checkOperator({from: user2});
@@ -52,12 +57,12 @@ contract('<Blockchain Labs> Stake.sol, common functions', ([owner, operator, ben
         }
     });
 
-    it('check version', async function () {
+    it.only('check version', async function () {
         let res = await stake.version.call();
         assert.equal(res, "1.0.0");
     });
 
-    it('set wallet', async function () {
+    it.only('set wallet', async function () {
         stake.setWallet(beneficiary, {from: owner});
         try {
             await stake.setWallet(beneficiary, {from: user2});
@@ -67,7 +72,7 @@ contract('<Blockchain Labs> Stake.sol, common functions', ([owner, operator, ben
         }
     });
 
-    it('Fallback functions accept money', async () => {
+    it.only('Fallback functions accept money', async () => {
         let initialBalance = (await token.balanceOf(stake.address)).toNumber();
         await token.transfer(stake.address, 25, {from: user1});
         let afterBalance = (await token.balanceOf(stake.address)).toNumber();
@@ -78,18 +83,18 @@ contract('<Blockchain Labs> Stake.sol, common functions', ([owner, operator, ben
         // assert.equal(initialBalance.toNumber() + 10, afterBalance.toNumber());
     });
 
-    it('Set Fee token', async () => {
+    it.only('Set Fee token', async () => {
         await stake.setFeeToken(token.address, {from: owner});
         let res = await stake.feeToken.call();
         assert.equal(token.address, res.toString());
     });
 
-    it('Operator can revert FEE_CALCULATED flag', async () => {
+    it.only('Operator can revert FEE_CALCULATED flag', async () => {
         await stake.revertFeeCalculatedFlag(false, {from: owner});
         assert.equal((await stake.feeCalculated.call()), false);
     });
 
-    it('Operator can instigate redeeming for stakers', async () => {
+    it.only('Operator can instigate redeeming for stakers', async () => {
         try {
             await stake.redeemLevAndFeeToStakers([user1, user2], {from: operator});
             assert.fail('should have thrown before');
@@ -98,7 +103,7 @@ contract('<Blockchain Labs> Stake.sol, common functions', ([owner, operator, ben
         }
     });
 
-    it('Operator can run FEE calculation', async () => {
+    it.only('Operator can run FEE calculation', async () => {
         try {
             await stake.updateFeeForCurrentStakingInterval({from: operator});
             assert.fail('should have thrown before');
@@ -124,12 +129,42 @@ contract('<Blockchain Labs> Stake.sol, staking period is over', ([owner, operato
     });
 
     describe('Redeem LEVs and FEEs', function () {
-        it('Operator can instigate redeeming for all stakers', async () => {
-            // await forceMine(new BN(20));
+
+        it.only('Operator can NOT run FEE calculation if feeCalculated is false', async () => {
+            await stake.revertFeeCalculatedFlag(false, {from: owner});
+            try {
+                await stake.updateFeeForCurrentStakingInterval({from: operator});
+                assert.fail('should have thrown before');
+            } catch(error) {
+                assertRevert(error);
+            }
+        });
+
+        it.only('Operator can instigate redeeming for all stakers', async () => {
             await stakeit(10, user1, stake, token);
-            // await forceMine(new BN(100));
             await stake.revertFeeCalculatedFlag(true, {from: owner});
             await stake.redeemLevAndFeeByStaker({from: user1});
+        });
+
+        it.only('Redeem should not be possible if stake was =< 0', async () => {
+            await stake.revertFeeCalculatedFlag(true, {from: owner});
+            try {
+                await stake.redeemLevAndFeeByStaker({from: beneficiary});
+                assert.fail('should have thrown before');
+            } catch(error) {
+                assertRevert(error);
+            }
+        });
+
+        it.only('Redeem should not be possible if totalLevBlocks =< 0', async () => {
+            await stake.revertFeeCalculatedFlag(true, {from: owner});
+            await stake.setTotalLevBlocksToZero();
+            try {
+                await stake.redeemLevAndFeeByStaker({from: user1});
+                assert.fail('should have thrown before');
+            } catch(error) {
+                assertRevert(error);
+            }
         });
     });
 });
