@@ -47,4 +47,13 @@ contract('FEE tokens <Blockchain Labs>, @tikonoff', (accounts) => {
         assert.equal((await fee.balanceOf(user2)).toNumber(), 600);
         assert.equal((await fee.feeInCirculation()).toNumber(), 1500)
     });
+
+    it('transfer more than balance should fail', async function () {
+        try {
+            await fee.transfer(user1, 100000, {from: user2});
+            assert.fail('should have thrown before');
+        } catch(error) {
+            assertRevert(error);
+        }
+    });
 });

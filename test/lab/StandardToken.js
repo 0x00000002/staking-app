@@ -1,5 +1,5 @@
 const assertFail = require('../helpers/assertFail');
-// import assertFail from '../helpers/assertFail';
+const assertRevert  = require('../helpers/assertRevert');
 const StandardTokenMock = artifacts.require('StandardTokenMock');
 
 contract('StandardToken, <Blockchain Labs>, @tikonoff', function ([_, owner, recipient, anotherAccount]) {
@@ -68,6 +68,16 @@ contract('StandardToken, <Blockchain Labs>, @tikonoff', function ([_, owner, rec
                     assert.equal(logs[0].args._to, to);
                     assert(logs[0].args._value.eq(amount));
                 });
+
+                it('transfer more than balance should fail', async function () {
+                    try {
+                        await this.token.transfer(owner, 100000, {from: anotherAccount});
+                        assert.fail('should have thrown before');
+                    } catch(error) {
+                        assertRevert(error);
+                    }
+                });
+
             });
         });
 
