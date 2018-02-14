@@ -1,4 +1,5 @@
 # LEV Stake Contract
+[![Coverage Status](https://coveralls.io/repos/github/tikonoff/staking-app/badge.svg?branch=alex)](https://coveralls.io/github/tikonoff/staking-app?branch=alex)
 
 ### Prerequisites:
 

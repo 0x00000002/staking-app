@@ -1,6 +1,8 @@
 const HumanStandardToken = artifacts.require("./HumanStandardToken.sol");
 const Stake = artifacts.require("./Stake.sol");
 const Fee = artifacts.require("./Fee.sol");
+const assertFail = require('./helpers/assertFail');
+
 
 const expect = require("expect.js");
 const fs = require('fs');
@@ -29,6 +31,7 @@ contract('Stake Levs', (accounts) => {
     await forceMine(new BN(200))
   });
 
+
   it('user should be able to put tokens for stake', async function () {
     stake = await Stake.deployed();
     await stakeit(10, user1(accounts), stake, token);
@@ -46,6 +49,7 @@ contract('Stake Levs', (accounts) => {
     expect((await stake.levBlocks(user1(accounts))).toNumber()).to.be.eql(10 * 98 + 15 * 48);
     expect((await stake.levBlocks(user2(accounts))).toNumber()).to.be.eql(15 * 96 + 20 * 46);
   });
+
 });
 
 contract('Calculate Fee Tokens', (accounts) => {
@@ -79,6 +83,7 @@ contract('Calculate Fee Tokens', (accounts) => {
     let walletNewBalance = (await web3.eth.getBalance(wallet));
     expect(walletNewBalance - walletBalance).to.eql(10000000);
   });
+
 });
 
 contract('Calculate fee tokens when no eth and fee has been collected', (accounts) => {
