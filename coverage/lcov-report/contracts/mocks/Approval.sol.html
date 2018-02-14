@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for contracts/mocks/ValidatingMock.sol</title>
+    <title>Code coverage report for contracts/mocks/Approval.sol</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">contracts/mocks/</a> ValidatingMock.sol
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/mocks/</a> Approval.sol
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -49,23 +49,7 @@
 4
 5
 6
-7
-8
-9
-10
-11
-12
-13
-14
-15</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+7</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -73,17 +57,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.4.18;
 &nbsp;
-import "./../Validating.sol";
-&nbsp;
-contract ValidatingMock is Validating{
-    function checkEmptyValidZero(string _string, address _address, uint _uint)
-        public
-        validAddress(_address)
-        notEmpty(_string)
-        notZero(_uint)
-        returns (bool _true)
-    {
-        return true;
+contract Approval {
+    function receiveApproval(address _address1, uint256 _value, address _address2, bytes _data) public {
+        revert();
     }
 }</pre></td></tr>
 </table></pre>
