@@ -1,6 +1,9 @@
 # Gas consumption report
 performed by Alex Tikonoff, March 15, 2018
 
+[![Coverage Status](https://coveralls.io/repos/github/tikonoff/staking-app/badge.svg?branch=alex)](https://coveralls.io/github/tikonoff/staking-app?branch=alex)
+
+
 ```
   Contract: owner manipulations
     ✓ should have all the owners
