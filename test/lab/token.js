@@ -14,7 +14,7 @@ contract('Token <Blockchain Labs>, @tikonoff', ([owner, user1, user2]) => {
     });
 
     describe('HumanStandardToken', function () {
-        it('can approve and call', async function () {
+        it.only('can approve and call', async function () {
             assert.isOk(value = await token.approveAndCall(user, amount, data));
             assert.equal(value.logs[0].event, 'Approval');
             assert.equal(value.logs[0].args._owner, owner);
@@ -24,7 +24,7 @@ contract('Token <Blockchain Labs>, @tikonoff', ([owner, user1, user2]) => {
             assert.equal(value, amount);
         });
 
-        it('receiveApproval should revert', async function () {
+        it.only('receiveApproval should revert', async function () {
             try {
                 await token.approveAndCall(approval.address, 1, "asdf");
                 assert.fail('should have thrown before');
