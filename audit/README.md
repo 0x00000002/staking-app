@@ -84,23 +84,123 @@ List of all issues: [Github](https://github.com/tikonoff/staking-app/issues)
 <br>
 
 ## Dynamic Analysis
-[![Coverage Status](https://coveralls.io/repos/github/gabriel-canaan/gifto/badge.svg?branch=gabedojo)](https://coveralls.io/github/gabriel-canaan/gifto?branch=gabedojo)
+[![Coverage Status](https://coveralls.io/repos/github/tikonoff/staking-app/badge.svg?branch=alex)](https://coveralls.io/github/tikonoff/staking-app?branch=alex)
 
-```
--------------------------|----------|----------|----------|----------|----------------|
-File                     |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
--------------------------|----------|----------|----------|----------|----------------|
- contracts/              |    16.77 |    13.24 |    23.21 |    17.61 |                |
-  Gifto.sol              |    15.23 |    12.12 |    19.23 |    16.37 |... 713,714,715 |
-  Migration.sol          |       75 |       50 |       75 |       60 |          15,16 |
- contracts/helpers/      |      100 |      100 |        0 |        0 |                |
-  MockMultiSigWallet.sol |      100 |      100 |        0 |        0 |             11 |
--------------------------|----------|----------|----------|----------|----------------|
-All files                |    16.77 |    13.24 |    22.41 |    17.51 |                |
--------------------------|----------|----------|----------|----------|----------------|
-```
 
-Build: [coveralls.io](https://coveralls.io/github/gabriel-canaan/gifto)
+<table class=“coverage-summary”>
+<thead>
+<tr>
+   <th data-col=“file” data-fmt=“html” data-html=“true” class=“file”>File</th>
+   <th data-col=“statements” data-type=“number” data-fmt=“pct” class=“pct”>Statements</th>
+   <th data-col=“statements_raw” data-type=“number” data-fmt=“html” class=“abs”></th>
+   <th data-col=“branches” data-type=“number” data-fmt=“pct” class=“pct”>Branches</th>
+   <th data-col=“branches_raw” data-type=“number” data-fmt=“html” class=“abs”></th>
+   <th data-col=“functions” data-type=“number” data-fmt=“pct” class=“pct”>Functions</th>
+   <th data-col=“functions_raw” data-type=“number” data-fmt=“html” class=“abs”></th>
+   <th data-col=“lines” data-type=“number” data-fmt=“pct” class=“pct”>Lines</th>
+   <th data-col=“lines_raw” data-type=“number” data-fmt=“html” class=“abs”></th>
+</tr>
+</thead>
+<tbody><tr>
+  <td class=“file high” data-value=“Fee.sol”><a href=“Fee.sol.html”>Fee.sol</a></td>
+  <td data-value=“100” class=“pct high”>100%</td>
+  <td data-value=“13” class=“abs high”>13/13</td>
+  <td data-value=“100” class=“pct high”>100%</td>
+  <td data-value=“4” class=“abs high”>4/4</td>
+  <td data-value=“100” class=“pct high”>100%</td>
+  <td data-value=“5” class=“abs high”>5/5</td>
+  <td data-value=“100” class=“pct high”>100%</td>
+  <td data-value=“14” class=“abs high”>14/14</td>
+  </tr>
+
+<tr>
+  <td class=“file high” data-value=“HumanStandardToken.sol”><a href=“HumanStandardToken.sol.html”>HumanStandardToken.sol</a></td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“9" class=“abs high”>9/9</td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“2" class=“abs high”>2/2</td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“2" class=“abs high”>2/2</td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“9" class=“abs high”>9/9</td>
+  </tr>
+
+<tr>
+  <td class=“file high” data-value=“Owned.sol”><a href=“Owned.sol.html”>Owned.sol</a></td>
+  <td data-value=“95.45” class=“pct high”>95.45%</td>
+  <td data-value=“22” class=“abs high”>21/22</td>
+  <td data-value=“75” class=“pct medium”>75%</td>
+  <td data-value=“16” class=“abs medium”>12/16</td>
+  <td data-value=“100” class=“pct high”>100%</td>
+  <td data-value=“7” class=“abs high”>7/7</td>
+  <td data-value=“100” class=“pct high”>100%</td>
+  <td data-value=“25” class=“abs high”>25/25</td>
+  </tr>
+
+<tr>
+  <td class=“file high” data-value=“SafeMath.sol”><a href=“SafeMath.sol.html”>SafeMath.sol</a></td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“10" class=“abs high”>10/10</td>
+  <td data-value=“66.67" class=“pct medium”>66.67%</td>
+  <td data-value=“6" class=“abs medium”>4/6</td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“4" class=“abs high”>4/4</td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“10" class=“abs high”>10/10</td>
+  </tr>
+
+<tr>
+  <td class=“file high” data-value=“Stake.sol”><a href=“Stake.sol.html”>Stake.sol</a></td>
+  <td data-value=“97.87” class=“pct high”>97.87%</td>
+  <td data-value=“47” class=“abs high”>46/47</td>
+  <td data-value=“69.23” class=“pct medium”>69.23%</td>
+  <td data-value=“26” class=“abs medium”>18/26</td>
+  <td data-value=“100” class=“pct high”>100%</td>
+  <td data-value=“16” class=“abs high”>16/16</td>
+  <td data-value=“96” class=“pct high”>96%</td>
+  <td data-value=“50” class=“abs high”>48/50</td>
+  </tr>
+
+<tr>
+  <td class=“file high” data-value=“StandardToken.sol”><a href=“StandardToken.sol.html”>StandardToken.sol</a></td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“16" class=“abs high”>16/16</td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“4" class=“abs high”>4/4</td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“5" class=“abs high”>5/5</td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“16" class=“abs high”>16/16</td>
+  </tr>
+
+<tr>
+  <td class=“file high” data-value=“Token.sol”><a href=“Token.sol.html”>Token.sol</a></td>
+  <td data-value=“100” class=“pct high”>100%</td>
+  <td data-value=“0” class=“abs high”>0/0</td>
+  <td data-value=“100” class=“pct high”>100%</td>
+  <td data-value=“0” class=“abs high”>0/0</td>
+  <td data-value=“100” class=“pct high”>100%</td>
+  <td data-value=“0” class=“abs high”>0/0</td>
+  <td data-value=“100” class=“pct high”>100%</td>
+  <td data-value=“0” class=“abs high”>0/0</td>
+  </tr>
+
+<tr>
+  <td class=“file high” data-value=“Validating.sol”><a href=“Validating.sol.html”>Validating.sol</a></td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“3" class=“abs high”>3/3</td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“6" class=“abs high”>6/6</td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“3" class=“abs high”>3/3</td>
+  <td data-value=“100" class=“pct high”>100%</td>
+  <td data-value=“6" class=“abs high”>6/6</td>
+  </tr>
+
+</tbody>
+</table>
+
+Build: [coveralls.io](https://coveralls.io/builds/15519613)
 
 <br>
 
