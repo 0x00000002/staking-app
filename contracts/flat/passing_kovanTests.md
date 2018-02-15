@@ -7,7 +7,7 @@
 #### Successfully  deploy HumanStandardToken contract
  - [x] [0xcf0ce1](https://kovan.etherscan.io/tx/0xcf0ce180412f0d784ea001a8698abef98009d2abfb740488a8c6fc7c0bc59487)
 
-#### Successfully deploy Stake and verify contract
+#### Successfully deploy Stake contract
  - [x] [0x604c8f](https://kovan.etherscan.io/tx/0x604c8fbe7b29f4a39f5c4890f6ee24a99103ece2b01d2ef30a3765f28371ea1a)
 
 #### approve Fee Owner allows a spender to withdraw from their account
