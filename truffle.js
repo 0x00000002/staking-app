@@ -45,4 +45,11 @@ module.exports = {
       gasPrice  : 4000000000,
     },
   },
+    // mocha: {
+    //     reporter: 'eth-gas-reporter',
+    //     reporterOptions : {
+    //         currency: 'NZD',
+    //         gasPrice: 21
+    //     }
+    // }
 };

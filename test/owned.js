@@ -1,6 +1,6 @@
 const Fee = artifacts.require('./Fee.sol');
 const expect = require('expect.js');
-
+const assertFail = require('./helpers/assertFail');
 
 contract('owner manipulations', (accounts) => {
   let fee;
@@ -50,7 +50,17 @@ contract('owner manipulations - removal', (accounts) => {
     }
   });
 
-  it('any owner can remove a owner', async function () {
+  it('remove an owner', async function () {
+      let fee = await Fee.new([accounts[0], accounts[1], accounts[2]], 'FEE', 9, 'FEE');
+      let _owners = [accounts[0], accounts[1], accounts[2]];
+      for (let i = 0; i < _owners.length; i++) {
+          if(_owners[i] == accounts[1])
+              assert.isOk(await fee.removeOwner(_owners[i]));
+      }
+  });
+
+
+    it('any owner can remove a owner', async function () {
     await fee.removeOwner(accounts[2]);
     let _owners = [accounts[0], accounts[1]];
     expect(await fee.getOwners()).to.eql(_owners);
@@ -96,6 +106,18 @@ contract('only owner', (accounts) => {
       expect(e.message).to.eql('VM Exception while processing transaction: revert')
     }
   })
+});
+
+contract('Set operator', (accounts) => {
+    it('owner can set operator', async function () {
+        let fee = await Fee.new(owners(accounts), 'FEE', 9, 'FEE');
+        assert.isOk(await fee.setOperator(accounts[2], {from: accounts[0]}));
+    });
+
+    it('only owner can set operator', async function () {
+        let fee = await Fee.new(owners(accounts), 'FEE', 9, 'FEE');
+        await assertFail(await fee.setOperator(accounts[2], {from: accounts[2]}));
+    })
 });
 
 
