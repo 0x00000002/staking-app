@@ -106,13 +106,13 @@ Build: [coveralls.io](https://coveralls.io/github/gabriel-canaan/gifto)
 
 ## Gas Consumption
 
-Upon finalization of the contracts to be used by Gifto, the contracts were assessed on the gas usage of each function to ensure there aren't any unforeseen issues with exceeding the block size GasLimit. A detailed report can be found in [./gas_consumption_report.md](https://github.com/tikonoff/gifto/blob/master/audit/gas_consumption_report.md).
+Upon finalization of the contracts to be used by Leverj, the contracts were assessed on the gas usage of each function to ensure there aren't any unforeseen issues with exceeding the block size GasLimit. A detailed report can be found in [./gas_consumption_report.md](https://github.com/tikonoff/staking-app/blob/master/audit/gas-consumption-report.md).
 
 <br>
 
 ## Functional tests
 
-Functions were tested according the business scenario and available here [./kovan-functional-tests.md](https://github.com/tikonoff/gifto/blob/master/audit/kovan-functional-tests.md)
+Functions were tested according the business scenario and available here [./kovan-tests.md](https://github.com/tikonoff/staking-app/blob/master/audit/Kovan_tests.md)
 
 <br>
 
