@@ -19,23 +19,23 @@
 #### addOwner Stake Owner can add a new owner
  - [x] [0x585065](https://kovan.etherscan.io/tx/0x5850657bf7e0ecdc3a5096c4a4f259512d7146e0ab4bee711ed071de09a90077)
 
-#### removeOwner Stake Owner can remove an owner
+#### removeOwner Owner can remove an owner
  - [x] [0x9b702d](https://kovan.etherscan.io/tx/0x9b702d788da45842b1198c997b6e689211dc0ed378bd5f5f16dbfd8b0614e599)
 
-#### revertFeeCalculatedFlag Stake Owner can set feeCalculated to true/false
+#### revertFeeCalculatedFlag Owner can set feeCalculated to true/false
  - [x] [0x3e98fc](https://kovan.etherscan.io/tx/0x3e98fc462a8e07efdaac345cb085efdda5d54df658873bb788d625965731dc66)
 
-#### setFeeToken Stake Owner can set the Fee token's address
+#### setFeeToken Owner can set the Fee token's address
  - [x] [0x674e5d](https://kovan.etherscan.io/tx/0x674e5d8942a965b4f95e2e66a6b38ae0b6a0099515a164e710fd37310f2b6401)
 
-#### setLevToken Stake Owner can set the Lev token's address
+#### setLevToken Owner can set the Lev token's address
  - [x] [0x97502c](https://kovan.etherscan.io/tx/0x97502cc59b8892bdf8c7219fdb2d1834d2cee3d224ff4d790fbabb02ec8fec97)
 
-#### setOperator Stake Owner can set new Operator
+#### setOperator Owner can set new Operator
  - [x] [0xb0df4c](https://kovan.etherscan.io/tx/0xb0df4cd771c97d3da421114066fa634a25b9be03575f7c3431aab6155959d813)
 
-#### setWallet Stake Owner can set the wallet address
+#### setWallet Owner can set the wallet address
  - [x] [0x6b9266](https://kovan.etherscan.io/tx/0x6b92668289e4e3faf476d0d7ef92ecd6974a803ff185dedb43ba74d9407fa0d4)
 
-#### startNewStakingInterval Stake Operator can set a new staking interval (see failing test issue)
+#### startNewStakingInterval Operator can set a new staking interval (see failing test issue)
  - [x] [0x8ba2a1](https://kovan.etherscan.io/tx0x8ba2a1cc104e3ea83a54bd42c152a5f4f53bf34c686a2d8eccc9eef3468cabd3)
