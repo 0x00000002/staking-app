@@ -2,7 +2,7 @@
 <br>
 
 ## Preamble
-This audit report was undertaken by <b>BlockchainLabs.nz</b> for the purpose of providing feedback to <b>Leverj Limited</b>. <br>It has subsequently been shared publicly without any express or implied warranty.
+This audit report was undertaken by <b>BlockchainLabs.nz</b> for the purpose of providing feedback to <b>Leverj</b>. <br>It has subsequently been shared publicly without any express or implied warranty.
 
 Solidity contracts were sourced from the public Github repo [github.com/leverj/staking](https://github.com/leverj/staking) prior to commit [e8716e4a11881fad181b5330206d8b0c27a58510](https://github.com/leverj/staking/commit/e8716e4a11881fad181b5330206d8b0c27a58510) - we would encourage all community members and token holders to make their own assessment of the contracts.
 
@@ -102,7 +102,7 @@ List of all issues: [Github](https://github.com/tikonoff/staking-app/issues)
 </tr>
 </thead>
 <tbody><tr>
-  <td class=“file high” data-value=“Fee.sol”><a href=“Fee.sol.html”>Fee.sol</a></td>
+  <td class=“file high” data-value=“Fee.sol”>Fee.sol</td>
   <td data-value=“100” class=“pct high”>100%</td>
   <td data-value=“13” class=“abs high”>13/13</td>
   <td data-value=“100” class=“pct high”>100%</td>
@@ -114,7 +114,7 @@ List of all issues: [Github](https://github.com/tikonoff/staking-app/issues)
   </tr>
 
 <tr>
-  <td class=“file high” data-value=“HumanStandardToken.sol”><a href=“HumanStandardToken.sol.html”>HumanStandardToken.sol</a></td>
+  <td class=“file high” data-value=“HumanStandardToken.sol”>HumanStandardToken.sol</td>
   <td data-value=“100" class=“pct high”>100%</td>
   <td data-value=“9" class=“abs high”>9/9</td>
   <td data-value=“100" class=“pct high”>100%</td>
@@ -126,7 +126,7 @@ List of all issues: [Github](https://github.com/tikonoff/staking-app/issues)
   </tr>
 
 <tr>
-  <td class=“file high” data-value=“Owned.sol”><a href=“Owned.sol.html”>Owned.sol</a></td>
+  <td class=“file high” data-value=“Owned.sol”>Owned.sol</td>
   <td data-value=“95.45” class=“pct high”>95.45%</td>
   <td data-value=“22” class=“abs high”>21/22</td>
   <td data-value=“75” class=“pct medium”>75%</td>
@@ -138,7 +138,7 @@ List of all issues: [Github](https://github.com/tikonoff/staking-app/issues)
   </tr>
 
 <tr>
-  <td class=“file high” data-value=“SafeMath.sol”><a href=“SafeMath.sol.html”>SafeMath.sol</a></td>
+  <td class=“file high” data-value=“SafeMath.sol”>SafeMath.sol</td>
   <td data-value=“100" class=“pct high”>100%</td>
   <td data-value=“10" class=“abs high”>10/10</td>
   <td data-value=“66.67" class=“pct medium”>66.67%</td>
@@ -150,7 +150,7 @@ List of all issues: [Github](https://github.com/tikonoff/staking-app/issues)
   </tr>
 
 <tr>
-  <td class=“file high” data-value=“Stake.sol”><a href=“Stake.sol.html”>Stake.sol</a></td>
+  <td class=“file high” data-value=“Stake.sol”>Stake.sol</td>
   <td data-value=“97.87” class=“pct high”>97.87%</td>
   <td data-value=“47” class=“abs high”>46/47</td>
   <td data-value=“69.23” class=“pct medium”>69.23%</td>
@@ -162,7 +162,7 @@ List of all issues: [Github](https://github.com/tikonoff/staking-app/issues)
   </tr>
 
 <tr>
-  <td class=“file high” data-value=“StandardToken.sol”><a href=“StandardToken.sol.html”>StandardToken.sol</a></td>
+  <td class=“file high” data-value=“StandardToken.sol”>StandardToken.sol</td>
   <td data-value=“100" class=“pct high”>100%</td>
   <td data-value=“16" class=“abs high”>16/16</td>
   <td data-value=“100" class=“pct high”>100%</td>
@@ -174,7 +174,7 @@ List of all issues: [Github](https://github.com/tikonoff/staking-app/issues)
   </tr>
 
 <tr>
-  <td class=“file high” data-value=“Token.sol”><a href=“Token.sol.html”>Token.sol</a></td>
+  <td class=“file high” data-value=“Token.sol”>Token.sol</td>
   <td data-value=“100” class=“pct high”>100%</td>
   <td data-value=“0” class=“abs high”>0/0</td>
   <td data-value=“100” class=“pct high”>100%</td>
@@ -186,7 +186,7 @@ List of all issues: [Github](https://github.com/tikonoff/staking-app/issues)
   </tr>
 
 <tr>
-  <td class=“file high” data-value=“Validating.sol”><a href=“Validating.sol.html”>Validating.sol</a></td>
+  <td class=“file high” data-value=“Validating.sol”>Validating.sol</td>
   <td data-value=“100" class=“pct high”>100%</td>
   <td data-value=“3" class=“abs high”>3/3</td>
   <td data-value=“100" class=“pct high”>100%</td>
