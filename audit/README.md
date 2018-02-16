@@ -61,6 +61,7 @@ List of all issues: [Github](https://github.com/tikonoff/staking-app/issues)
 
 - **[Explicit UINT256 vs UINT](https://github.com/tikonoff/staking-app/issues/2)** - `Best Practice` - Lines: [35](https://github.com/tikonoff/staking-app/blob/8306bb8deebe0f554e99bf4e525ea4a3f5672397/contracts/Stake.sol#L35)
 - **[Differentiate functions and events](https://github.com/tikonoff/staking-app/issues/3)** - `Best Practice` - Lines: [24](https://github.com/tikonoff/staking-app/blob/8306bb8deebe0f554e99bf4e525ea4a3f5672397/contracts/Stake.sol#L24)
+- **[Unable to test this function due to inaccessibility of the external function](https://github.com/tikonoff/staking-app/issues/5)** `Correctness` - Lines: [54](https://github.com/tikonoff/staking-app/blob/8306bb8deebe0f554e99bf4e525ea4a3f5672397/contracts/HumanStandardToken.sol#L54)
 - **[Expected ' { ' after for statement](https://github.com/tikonoff/staking-app/issues/7)** - `Best Practice` - Lines: [153](https://github.com/tikonoff/staking-app/blob/8306bb8deebe0f554e99bf4e525ea4a3f5672397/contracts/Stake.sol#L153)
 - **[Lock pragma to specific compiler version](https://github.com/tikonoff/staking-app/issues/8)** - Lines: [11](https://github.com/tikonoff/staking-app/blob/8306bb8deebe0f554e99bf4e525ea4a3f5672397/contracts/Stake.sol#L11) etc
 - **[Code layout problem](https://github.com/tikonoff/staking-app/issues/12)** - `Best practice` - Line: [75](https://github.com/tikonoff/staking-app/blob/8306bb8deebe0f554e99bf4e525ea4a3f5672397/contracts/Stake.sol#L75)
@@ -69,17 +70,14 @@ List of all issues: [Github](https://github.com/tikonoff/staking-app/issues)
 - **[No fallback function in Fee.sol](https://github.com/tikonoff/staking-app/issues/17)** - `Best practice`
 - **[Formulas of the FEE calculations in the code and whitepaper are contradicting each other](https://github.com/tikonoff/staking-app/issues/18)** `Readability` Lines: [140]
 
-
-
 ### Moderate
-- **[Wrong syntex when call external contract's function using keccak keyword](https://github.com/tikonoff/staking-app/issues/6)** `Correctness` - Lines: [54](https://github.com/tikonoff/staking-app/blob/8306bb8deebe0f554e99bf4e525ea4a3f5672397/contracts/HumanStandardToken.sol#L54)
 - **[Favor pull over push](https://github.com/tikonoff/staking-app/issues/9)** - `Best practice` - Lines: [152](https://github.com/tikonoff/staking-app/blob/8306bb8deebe0f554e99bf4e525ea4a3f5672397/contracts/Stake.sol#L152)
  
 ### Major
 - **[Different solidity versions have been used in different contracts](https://github.com/tikonoff/staking-app/issues/1)** - Lines: [11](https://github.com/tikonoff/staking-app/blob/8306bb8deebe0f554e99bf4e525ea4a3f5672397/contracts/Stake.sol#L11), [1](https://github.com/tikonoff/staking-app/blob/8306bb8deebe0f554e99bf4e525ea4a3f5672397/contracts/SafeMath.sol#L1)
 
 ### Critical
-- **[Single owner's security authority level is too high](https://github.com/tikonoff/staking-app/issues/14)** - `Security`
+- **[Single owner has too much power](https://github.com/tikonoff/staking-app/issues/14)** - `Security`
 - **[Check overflow](https://github.com/tikonoff/staking-app/issues/16)** - `Best practice` `Correctness` Lines: [19](https://github.com/tikonoff/staking-app/blob/8306bb8deebe0f554e99bf4e525ea4a3f5672397/contracts/StandardToken.sol#L19)
 <br>
 
